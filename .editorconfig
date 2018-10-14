@@ -1,0 +1,51 @@
+# editorconfig.org
+root = true
+
+# TODO: require to install any package denpendent on your editor
+# see these propaties at https://github.com/editorconfig/editorconfig/wiki/EditorConfig-Properties
+
+[*]
+charset = utf-8
+end_of_line = lf
+indent_size = 2
+indent_style = space
+insert_final_newline = true
+max_line_length = 80
+trim_trailing_whitespace = true
+
+[*.{css, scss, styl}]
+curly_bracket_next_line = false
+spaces_around_operators = true
+spaces_around_brackets = outside
+quote_type = auto
+
+[*.{html, slim, pug}]
+spaces_around_operators = true
+spaces_around_brackets = both
+quote_type = auto
+
+[*.js]
+curly_bracket_next_line = false
+spaces_around_operators = true
+spaces_around_brackets = outside
+quote_type = single
+
+[**.min.js]
+indent_style = ignore
+insert_final_newline = ignore
+
+[*.json]
+insert_final_newline = ignore
+
+[*.md]
+max_line_length = 0
+trim_trailing_whitespace = false
+
+[*.rb]
+quote_type = auto
+spaces_around_brackets = both
+spaces_around_operators = true
+
+[*.py]
+indent_size = 4
+spaces_around_brackets = outside
