@@ -1,5 +1,6 @@
 {
   "scripts": {
+    "dev:watch": "yarn stylus:watch",
     "stylus:compile": "stylus src/stylus/style.styl --out dist/css/style.css",
     "stylus:watch": "stylus --watch src/stylus/style.styl --out dist/css/style.css",
     "stylus": "yarn stylus:watch"
