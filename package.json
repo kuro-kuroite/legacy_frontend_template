@@ -6,6 +6,8 @@
     "stylus": "yarn stylus:watch"
   },
   "devDependencies": {
-    "stylus": "^0.54.5"
+    "stylint": "^1.5.9",
+    "stylus": "^0.54.5",
+    "stylus-supremacy": "^2.12.7"
   }
 }
