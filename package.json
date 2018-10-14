@@ -1,4 +1,9 @@
 {
+  "scripts": {
+    "stylus:compile": "stylus src/stylus/style.styl --out dist/css/style.css",
+    "stylus:watch": "stylus --watch src/stylus/style.styl --out dist/css/style.css",
+    "stylus": "yarn stylus:watch"
+  },
   "devDependencies": {
     "stylus": "^0.54.5"
   }
