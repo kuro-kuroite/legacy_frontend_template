@@ -15,6 +15,18 @@
     "stylus:watch": "stylus --watch src/stylus/style.styl --out dist/css/style.css",
     "stylus": "yarn stylus:watch"
   },
+  "lint-staged": {
+    "linters": {
+      "src/**/*.styl": [
+        "yarn stylus-supremacy format \\1 --replace --options .stylintrc",
+        "yarn stylint",
+        "git add"
+      ]
+    },
+    "ignore": [
+      "dist/**/*"
+    ]
+  },
   "devDependencies": {
     "@commitlint/cli": "^7.2.1",
     "@commitlint/config-conventional": "^7.1.2",
