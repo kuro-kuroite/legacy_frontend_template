@@ -1,0 +1,12 @@
+@import '_base/_setting';
+@import '_base/_properties'; // Atomic 本から
+@import '_base/_mixins';
+@import '_base/_reset';
+@import '_base/_base';
+@import '_base/**/style';
+// 基本的な配置のデザインを行い、ワイヤーフレームとして使用
+// default-image などを使用
+// visual regression test は template に "Lerem Ipsum" を入れて、スクリーンショット
+@import 'templates/_templates_inc';
+// 取得したデータを使用して、url(), color, background-color などで実データを定義
+@import 'pages/_pages_inc';
