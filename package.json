@@ -1,7 +1,7 @@
 {
   "scripts": {
     "dev:watch": "yarn dev:watch:all",
-    "dev:watch:all": "run-p lint:watch:all stylus:watch",
+    "dev:watch:all": "run-p lint:watch:all stylus:watch pug:watch",
     "// HACK html-beautify:fix": "insert bash -c for windows bacause extract glob pattern",
     "// FIX html-beautify:fix": "change to **/* from **/*/* extract glob pattern",
     "html-beautify:fix": "bash -c \"yarn js-beautify --type html \"src/pug/**/*/*.html\" \"src/pug/*.html\" --replace\"",
@@ -15,6 +15,9 @@
     "lint:watch": "yarn lint:watch:all",
     "// HACK lint:watch:all": "escape \" for windows",
     "lint:watch:all": "watch \"yarn lint:all\" .",
+    "// HACK pug:compile": "insert bash -c for windows bacause extract glob pattern",
+    "pug:compile": "bash -c \"pug src/pug/*.pug --out dist/html --pretty\"",
+    "pug:watch": "bash -c \"pug --watch src/pug/*.pug --out dist/html --pretty\"",
     "stylus-supremacy:fix": "yarn stylus-supremacy format src/stylus/**/*.styl --options .stylintrc --replace",
     "stylus-supremacy:fix:dry": "yarn stylus-supremacy format src/stylus/**/*.styl --options .stylintrc",
     "stylus:compile": "stylus src/stylus/style.styl --out dist/css/style.css",
