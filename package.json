@@ -57,5 +57,6 @@
     "stylus": "^0.54.5",
     "stylus-supremacy": "^2.12.7",
     "watch": "^1.0.2"
-  }
+  },
+  "license": "MIT"
 }
