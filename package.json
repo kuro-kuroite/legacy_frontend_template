@@ -1,11 +1,13 @@
 {
   "scripts": {
     "dev:watch": "yarn dev:watch:all",
-    "dev:watch:all": "run-p lint:watch:all stylus:watch pug:watch",
+    "dev:watch:all": "run-p lint:watch:all stylus:watch pug:watch image:move:watch",
     "// HACK html-beautify:fix": "insert bash -c for windows bacause extract glob pattern",
     "// FIX html-beautify:fix": "change to **/* from **/*/* extract glob pattern",
     "html-beautify:fix": "bash -c \"yarn js-beautify --type html \"src/pug/**/*/*.html\" \"src/pug/*.html\" --replace\"",
     "html-beautify:fix:dry": "bash -c \"yarn js-beautify --type html \"src/pug/**/*/*.html src/pug/*.html\" \"src/pug/*.html\"\"",
+    "image:move": "bash -c \"rm dist/images/* && cp -r src/images/**/**/* dist/images/\"",
+    "image:move:watch": "watch \"yarn image:move\" src/images/",
     "lint": "yarn lint:all",
     "lint:all": "run-p lint:*:fix",
     "lint:css:fix": "yarn stylus-supremacy:fix",
