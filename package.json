@@ -30,6 +30,11 @@
         "yarn stylus-supremacy format \\1 --replace --options .stylintrc",
         "yarn stylint",
         "git add"
+      ],
+      "src/**/*.html": [
+        "yarn js-beautify --type html --replace",
+        "yarn htmlhint",
+        "git add"
       ]
     },
     "ignore": [
