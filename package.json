@@ -1,5 +1,6 @@
 {
   "scripts": {
+    "clean": "bash -c \"rm -rf dist/**/*\"",
     "deploy": "run-p lint:all stylus:compile pug:compile image:move",
     "dev:watch": "yarn dev:watch:all",
     "dev:watch:all": "run-p lint:watch:all stylus:watch pug:watch image:move:watch",
