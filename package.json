@@ -7,7 +7,7 @@
     "// FIX html-beautify:fix": "change to **/* from **/*/* extract glob pattern",
     "html-beautify:fix": "bash -c \"yarn js-beautify --type html \"src/pug/**/*/*.html\" \"src/pug/*.html\" --replace\"",
     "html-beautify:fix:dry": "bash -c \"yarn js-beautify --type html \"src/pug/**/*/*.html src/pug/*.html\" \"src/pug/*.html\"\"",
-    "image:move": "bash -c \"rm dist/images/* && cp -r src/images/**/**/* dist/images/\"",
+    "image:move": "bash -c \"rm -rf dist/images/* ; cp -r src/images/**/**/* dist/images/ &>/dev/null || echo ''\"",
     "image:move:watch": "watch \"yarn image:move\" src/images/",
     "lint": "yarn lint:all",
     "lint:all": "run-p lint:*:fix",
