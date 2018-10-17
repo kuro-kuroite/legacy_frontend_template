@@ -46,3 +46,17 @@ npm-scripts として，以下のスクリプトを定義すると，自動的�
   - \[linter]:\*:fix
 - lint:[language]:fix:dry
   - \[linter]:\*:fix:dry
+
+### ファイル階層
+
+#### 概要
+
+ファイル構造として，役割ごとに最小の単位であるコンポーネントに「分割」し，複数のコンポーネントを使って一つのより大きな役割へと「統合」するやり方を採用する．役割ごとに「分割」し，管理しやすくしながら，それらを組み合わせていく「統合」で再利用性も高くなるファイル構造を目指す．
+
+### Atomic Design
+
+基本的に，src/{images, pug, stylus} は「Atomic Design」で「分割」と「統合」をする．Atomic Design とは，化学の「原子，分子，有機体, ...」のようなイメージで個々の要素を組み上げていく考え方だ．すなわち，コンポーネント単位である「atoms, molecules, organisms, templates, pages」を階層的に作り上げる設計手法となる．
+
+### Pug, Stylus の採用
+
+今回は，HTML変換言語である Pug と CSS変換言語である Stylus を採用した．なぜなら，より大きな役割へと「統合」するには，別のファイルを取り込む機能が必要となり，素の HTML5, CSS3 では力不足であるためだ．Pug では，`include path/to/component/_partial.{html, pug}` で，Stylus では，`@import 'path/to/component/style.{css, ''}';` の構文を使用できる．
