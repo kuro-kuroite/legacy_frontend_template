@@ -291,3 +291,9 @@ src/pug/ の中を使用する．*.pug が `yarn deploy` で dist/html/*.html �
     pages/
       [pagePage]/_partial.html
         note) 使用しないことを推奨する．templates のHTML をESNext や サーバサイド言語で中身のコンテンツを動的に書き換えながら生成する必要がある．よって，何かしらのJSライブラリ(React.js等)を使用しない限りは，基本的にpages のみでHTML, pugを書くのを推奨する．すなわち，templates のpugを includeすることはないだろう．
+
+#### Image
+
+src/images/ の中で使用する． `yarn deploy` で dist/images/ に移動する．
+
+src/images/**/ に画像をコピーする．Pug(HTML)やStylus(CSS) で画像を使用したいときは，`../images/[image].{png,jpg}` で参照できる．なぜなら，dist/{html, css}/*.* に移動することで，../images/ に画像ファイルが存在するためだ．
