@@ -257,3 +257,37 @@ src/stylus/ の中を使用する．style.styl が `yarn deploy` で dist/css/st
       [pagePage]/style.styl
 
         基本的には，templates のスタイルを  @import しながら作成する．すなわち，スタイルを書くことは基本的にはない. ただし，background-imageでimageのパスをurl()で更新することはあるだろう．
+
+#### Pug(HTML)
+
+src/pug/ の中を使用する．*.pug が `yarn deploy` で dist/html/*.html に変換される．
+
+    [page].pug
+      [page]: index, about といった各ページの pug を定義．
+      基本的には，organism/[ConpositeComponent]/_partial.html を include 構文で組み合わせる．
+
+    atoms/
+      [Component]/_partial.html
+        note) 基本的には，1つのタグで完結することが多いので，includeの手間とあまり変わらない．
+
+        ../../stylus/atoms/[Component]/style.styl で再利用したいHTMLを定義する．../[page].pug で include atoms/
+
+    molecules/
+      [Component]/_partial.html
+
+        ../../stylus/molecules/[ConcreteComponent]/style.styl で再利用したいHTMLを定義する．include atoms/[Component]/_partial.html を使用することがある．
+
+    organisms/
+      [Component]/_partial.html
+
+        ../../stylus/organisms/[CompositeComponent]/style.styl で再利用したいHTMLを定義する．include molecules/[Component]/_partial.html を使用することがある．
+
+    templates/
+      [pageTemplate]/_partial.html
+        note) 使用しないことを推奨する．templates層は，pages層でコンテンツを動的に変更するのを想定しているため，HTML, CSS の静的言語だけでは，実用できない．よって，何かしらのJSライブラリ(React.js等)を使用しない限りは，基本的にHTMLを書くことはないだろう
+
+        templatesのタグに入るコンテンツの中身は「Lorem Ipsum ...」や「default image」とする．
+
+    pages/
+      [pagePage]/_partial.html
+        note) 使用しないことを推奨する．templates のHTML をESNext や サーバサイド言語で中身のコンテンツを動的に書き換えながら生成する必要がある．よって，何かしらのJSライブラリ(React.js等)を使用しない限りは，基本的にpages のみでHTML, pugを書くのを推奨する．すなわち，templates のpugを includeすることはないだろう．
